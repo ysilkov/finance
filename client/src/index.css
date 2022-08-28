@@ -1,13 +1,133 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+.loding {
+  text-align: center;
+  background-color: rgb(245, 241, 241, 0.2);
+}
+.header {
+  height: 60px;
+  background-color: white;
+  padding-left: 50px;
+  padding-top: 20px;
+  color: black;
+  font-weight: bold;
+}
+.tickers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-image: url("./img/background.jpg");
+  margin-bottom: 20px;
+}
+.ticker-container {
+  height: 200%;
+  width: 13%;
+  margin-bottom: 20px;
+}
+.ticker {
+  border: 2px solid gray;
+  border-radius: 10%;
+  height: 80%;
+  margin-top: 20px;
+  padding: 0 10px;
+  padding-top: 10px;
+  background-color: white;
+}
+.ticker-main {
+  border: 1px solid none;
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+.tickers > .ticker-container:nth-child(1) > .ticker > .ticker-main {
+  background-color: red;
+}
+.tickers > .ticker-container:nth-child(2) > .ticker > .ticker-main {
+  background-color: blue;
+}
+.tickers > .ticker-container:nth-child(3) > .ticker > .ticker-main {
+  background-color: gray;
+}
+.tickers > .ticker-container:nth-child(4) > .ticker > .ticker-main {
+  background-color: gold;
+}
+.tickers > .ticker-container:nth-child(5) > .ticker > .ticker-main {
+  background-color: greenyellow;
+}
+.tickers > .ticker-container:nth-child(6) > .ticker > .ticker-main {
+  background-color: brown;
+}
+.ticker-exchange {
+  margin-bottom: 40px;
+  font-size: 0.875rem;
+}
+.ticker-price {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.ticker-footer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  justify-content: space-around;
+}
+.ticker-percent {
+  border: 1px solid none;
+  border-radius: 5px;
+  width: 80px;
+  text-align: center;
+  color: white;
+  background-color: white;
+  font-weight: bold;
+  height: 30px;
+  padding-top: 5px;
+}
+.ticker-button {
+  margin-top: 5px;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.tiker-button-container {
+  position: relative;
+}
+.ticker-button-text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 30px;
+  display: none;
+  border: 1px solid gray;
+  background-color: gray;
+  border-radius: 5px;
+  padding-top: 1px;
+  text-align: center;
+  width: 100px;
+  height: 25px;
+  color: white;
+}
+.tiker-button-container:hover .ticker-button-text {
+  display: block;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.footer{
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  left: 0px;
+  bottom: 0px;
+  background-color: ghostwhite;
+  padding-top: 10px;
+  text-align: center;
+  
 }
