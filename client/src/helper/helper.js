@@ -1,19 +1,46 @@
+import { io } from "socket.io-client";
+const socket = io.connect("http://localhost:4000");
 
- export let changeValue  = [];
- export  let changeColor = [];
- const up = "▲ ";
- const down = "▼ " ;
- export const changeValueColor = (data) =>{
- if(data.length !==0){
-   data[data.length-1].forEach((val)=>{
-     if(val.change_percent > 0) {
-         changeValue.push(up + val.change_percent) 
-         changeColor.push("green") 
- } else {
-     changeValue.push(down + val.change_percent);
-     changeColor.push("red") 
- }
-})
- }
-}
-console.log(changeColor)
+export let changeValue = [];
+export let changeColor = [];
+const up = "▲ ";
+const down = "▼ ";
+export const changeValueColor = (data) => {
+  if (data.length !== 0) {
+    data[data.length - 1].forEach((val) => {
+      if (val.change_percent > 0) {
+        changeValue.push(up + val.change_percent);
+        changeColor.push("green");
+      } else {
+        changeValue.push(down + val.change_percent);
+        changeColor.push("red");
+      }
+    });
+  }
+};
+
+export const checkTrikerColor = (triker) => {
+  if (triker === "AAPL") {
+    return { "background-color": "red" };
+  }
+  if (triker === "GOOGL") {
+    return { "background-color": "blue" };
+  }
+  if (triker === "MSFT") {
+    return { "background-color": "gray" };
+  }
+  if (triker === "AMZN") {
+    return { "background-color": "gold" };
+  }
+  if (triker === "FB") {
+    return { "background-color": "greenyellow" };
+  }
+  if (triker === "TSLA") {
+    return { "background-color": "brown" };
+  }
+};
+
+export const upDateTimeSocket = (e) => {
+    console.log(e)
+  socket.emit("newTime", e);
+};

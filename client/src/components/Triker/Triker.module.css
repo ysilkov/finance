@@ -1,0 +1,88 @@
+.tickers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-image: url("../../img/background.jpg");
+  margin-bottom: 20px;
+}
+.tickerContainer {
+  height: 200%;
+  width: 13%;
+  margin-bottom: 20px;
+}
+.ticker {
+  border: 2px solid gray;
+  border-radius: 10%;
+  height: 80%;
+  margin-top: 20px;
+  padding: 0 10px;
+  padding-top: 10px;
+  background-color: white;
+}
+.tickerName {
+  border: 1px solid none;
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 2px 0;
+}
+
+.tickerExchange {
+  margin-bottom: 40px;
+  font-size: 0.875rem;
+}
+.tickerPrice {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.tickerFooter {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  justify-content: space-around;
+}
+.tickerPercent {
+  border: 1px solid none;
+  border-radius: 5px;
+  width: 80px;
+  text-align: center;
+  color: white;
+  background-color: white;
+  font-weight: bold;
+  height: 30px;
+  padding-top: 5px;
+}
+.tickerButton {
+  margin-top: 5px;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.tikerButtonContainer {
+  position: relative;
+}
+.tickerButtonText {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 30px;
+  display: none;
+  border: 1px solid gray;
+  background-color: gray;
+  border-radius: 5px;
+  padding-top: 1px;
+  text-align: center;
+  width: 100px;
+  height: 25px;
+  color: white;
+}
+.tikerButtonContainer:hover .tickerButtonText {
+  display: block;
+}

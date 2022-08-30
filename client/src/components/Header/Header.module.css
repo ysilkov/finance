@@ -1,0 +1,69 @@
+.headerMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.headerText {
+  height: 60px;
+  background-color: white;
+  padding-left: 50px;
+  padding-top: 20px;
+  color: black;
+  font-weight: bold;
+}
+.update {
+  width: 20px;
+  height: 20px;
+}
+.updateText {
+  margin-right: 100px;
+}
+.listUpdate {
+  margin: 10px 100px 0 0;
+  height: 30px;
+  width: 120px;
+  background-color: gainsboro;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 5px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topmenu > li {
+  display: inline-block;
+  position: relative;
+}
+.submenu {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid white;
+  margin-top: 7px;
+}
+.submenu > li {
+  cursor: pointer;
+  border: 1px solid white;
+  width: 120px;
+  background-color: gainsboro;
+  border-radius: 5px;
+  color: gray;
+}
+.menuContainer .submenu {
+  display: none;
+}
+.menuContainer ul li:hover .submenu {
+  display: block;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.colorChoose{
+    color: black;
+}
