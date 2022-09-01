@@ -7,15 +7,15 @@ import {
   checkTrikerColor,
 } from "../../helper/helper";
 import Subscribe from "../Subscribe/Subscribe";
-import style from "./TrikersBody.module.css";
+import style from "./TickersBody.module.css";
 
 const TrikersBody = () => {
   const [ticker, setTicker] = useState("");
-  const data = useSelector((state) => state.add.trikers);
+  const data = useSelector((state) => state.add.tickers);
   changeValueColor(data);
-  let filterTriker = data[data.length - 1].filter((val) => {
+   let filterTicker = data[data.length - 1].filter((val) => {
     return val.ticker.toLowerCase().includes(ticker.toLowerCase());
-  });
+  }); 
   return (
     <div>
       <input
@@ -34,7 +34,7 @@ const TrikersBody = () => {
                 <th>Dividend</th>
                 <th>Percent</th>
               </tr>
-              {filterTriker.map((val) => (
+              {filterTicker.map((val) => (
                 <tr
                   className={style.ticker}
                   id={Date.parse(val.last_trade_time)}

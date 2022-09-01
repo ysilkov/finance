@@ -19,28 +19,37 @@ export const changeValueColor = (data) => {
   }
 };
 
-export const checkTrikerColor = (triker) => {
-  if (triker === "AAPL") {
+export const checkTrikerColor = (ticker) => {
+  if (ticker === "AAPL") {
     return { "background-color": "red" };
   }
-  if (triker === "GOOGL") {
+  if (ticker === "GOOGL") {
     return { "background-color": "blue" };
   }
-  if (triker === "MSFT") {
+  if (ticker === "MSFT") {
     return { "background-color": "gray" };
   }
-  if (triker === "AMZN") {
+  if (ticker === "AMZN") {
     return { "background-color": "gold" };
   }
-  if (triker === "FB") {
+  if (ticker === "FB") {
     return { "background-color": "greenyellow" };
   }
-  if (triker === "TSLA") {
+  if (ticker === "TSLA") {
     return { "background-color": "brown" };
   }
 };
 
 export const upDateTimeSocket = (e) => {
-    console.log(e)
   socket.emit("newTime", e);
+};
+let selectedLi;
+export const highLight = (li) => {
+  socket.on("timeChange", () => {
+    if (selectedLi) {
+      selectedLi.style = "color: gray";
+    }
+    selectedLi = li;
+    li.style = "color:black";
+  });
 };

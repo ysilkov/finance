@@ -6,12 +6,12 @@ import {
   changeValue,
   checkTrikerColor,
 } from "../../helper/helper";
-import { addFavoriteTrikers } from "../../store/dataReducer";
-import style from "./Triker.module.css";
+import { addFavoriteTickers } from "../../store/dataReducer";
+import style from "./Ticker.module.css";
 
 const Trikers = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.add.trikers);
+  const data = useSelector((state) => state.add.tickers);
   changeValueColor(data);
   return (
     <div>
@@ -40,7 +40,7 @@ const Trikers = () => {
                     className={style.tickerButton}
                     id={val.ticker}
                     onClick={(event) =>
-                      dispatch(addFavoriteTrikers(event.target.id))
+                      dispatch(addFavoriteTickers(event.target.id))
                     }
                   >
                     +

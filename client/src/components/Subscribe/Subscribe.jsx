@@ -5,8 +5,8 @@ import { upDate } from "../../store/dataReducer";
 import style from "./Subscribe.module.css";
 
 const Subscribe = () => {
-  const tickers = useSelector((state) => state.add.trikers);
-  const favorite = useSelector((state) => state.add.favoriteTrikers);
+  const tickers = useSelector((state) => state.add.tickers);
+  const favorite = useSelector((state) => state.add.favoriteTickers);
   const dispatch = useDispatch();
   useEffect(() => {
     try {

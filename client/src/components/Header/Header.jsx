@@ -1,23 +1,16 @@
 import React from "react";
-import { upDateTimeSocket } from "../../helper/helper";
+import { upDateTimeSocket, highLight } from "../../helper/helper";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  let selectedLi;
+ 
   const changeTime = (e) => {
     upDateTimeSocket(e.target.value);
     let target = e.target;
     if (target.tagName !== "LI") return;
     highLight(target);
   };
-  const highLight = (li) => {
-    if (selectedLi) {
-      selectedLi.style = "color: gray";
-    }
-    selectedLi = li;
-    li.style = "color:black";
-  };
-
+ 
   return (
     <div className={styles.headerMain}>
       <div className={styles.headerText}>FINANSE NASDAQ</div>

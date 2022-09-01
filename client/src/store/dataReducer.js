@@ -2,43 +2,42 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { io } from "socket.io-client";
 
 const initialState = {
-  trikers: [],
-  favoriteTrikers: [],
+  tickers: [],
+  favoriteTickers: [],
   tickersError: "",
   newTime: "",
 };
 export const getData = createAsyncThunk(
   "addData, getData",
   async (_, { rejectWithValue, dispatch }) => {
-    const socket = io.connect("http://localhost:4000");
+    const socket = await io.connect("http://localhost:4000");
     socket.emit("start");
     socket.on("ticker", (response) => {
-      console.log(response)
       dispatch(addData(response));
     });
-    socket.on('disconnect', () =>
-    dispatch(tickersError('disconnect')),
-  );
-  })
+    socket.on("disconnect", () => dispatch(tickersError("disconnect")));
+  }
+);
 
 export const Add = createSlice({
   name: "addData",
   initialState,
   reducers: {
     addData(state, action) {
-      state.trikers.push(action.payload);
+      state.tickers.push(action.payload);
     },
-    addFavoriteTrikers(state, action) {
-      state.favoriteTrikers.push(action.payload);
-      localStorage.setItem("tickers", JSON.stringify(state.favoriteTrikers));
+    addFavoriteTickers(state, action) {
+      state.favoriteTickers.push(action.payload);
+      localStorage.setItem("tickers", JSON.stringify(state.favoriteTickers));
     },
     upDate(state, action) {
-      state.favoriteTrikers = action.payload;
+      state.favoriteTickers = action.payload;
     },
     tickersError(state, action) {
-      state.tickersError = action.payload
-    }
+      state.tickersError = action.payload;
+    },
   },
 });
-export const { addData, addFavoriteTrikers, upDate, tickersError } = Add.actions;
+export const { addData, addFavoriteTickers, upDate, tickersError } =
+  Add.actions;
 export default Add.reducer;

@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Loding from "./components/Loading/Loding";
-import Trikers from "./components/Triker/Trikers";
-import TrikersBody from "./components/TrkersBody/TrikersBody";
+import Tickers from "./components/Ticker/Tickers";
+import TickersBody from "./components/TickersBody/TickersBody";
 
 import { getData } from "./store/dataReducer";
 function App() {
@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     dispatch(getData());
   }, [dispatch]);
-  const data = useSelector((state) => state.add.trikers);
+  const data = useSelector((state) => state.add.tickers);
   return (
     <>
       {data.length === 0 ? (
@@ -20,8 +20,8 @@ function App() {
       ) : (
         <div>
           <Header />
-          <Trikers />
-          <TrikersBody />
+          <Tickers />
+          <TickersBody />
           <Footer />
         </div>
       )}
