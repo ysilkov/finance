@@ -19,7 +19,7 @@ const Header = () => {
           <li className={styles.listUpdate}>
             <a href="/#">Time update</a>
             <ul className={styles.submenu}>
-              <li
+              <li 
                 value={5000}
                 onClick={(event) => {
                   changeTime(event);

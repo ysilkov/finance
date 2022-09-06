@@ -27,6 +27,7 @@ export const Add = createSlice({
       state.tickers.push(action.payload);
     },
     addFavoriteTickers(state, action) {
+      state.favoriteTickers = state.favoriteTickers || [];
       state.favoriteTickers.push(action.payload);
       localStorage.setItem("tickers", JSON.stringify(state.favoriteTickers));
     },

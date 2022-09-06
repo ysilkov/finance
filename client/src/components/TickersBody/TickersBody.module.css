@@ -60,11 +60,12 @@
   padding-left: 10px;
 }
 .chooseContainer {
-  margin: 45px 40px 0 150px;
+  margin: 45px 40px 0 70px;
   height: 320px;
   border: 1px solid gray;
   width: 200px;
   border-radius: 5px;
+ 
 }
 .tickerChangeColorGreen{
  background-color: green
