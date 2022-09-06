@@ -50,8 +50,8 @@ const TrikersBody = () => {
                   <td className={style.tickerPrice}>{val.price} $</td>
                   <td className={style.tickerDividend}>{val.dividend}</td>
                   <td
-                    className={style.tickerPercent}
-                    style={{ background: changeColor.reverse().pop() }}
+                    className={`${style.tickerPercent} ${changeColor.reverse().pop() === "green" ? style.tickerChangeColorGreen : style.tickerChangeColorRed}`}
+                    
                   >
                     {changeValue.reverse().pop()} %
                   </td>

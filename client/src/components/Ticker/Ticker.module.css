@@ -86,3 +86,9 @@
 .tikerButtonContainer:hover .tickerButtonText {
   display: block;
 }
+.tickerChangeColorGreen{
+  background-color: green
+ }
+ .tickerChangeColorRed{
+   background-color: red
+ }

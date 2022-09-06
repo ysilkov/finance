@@ -22,7 +22,7 @@ const Subscribe = () => {
   }
   const deleteTickers = (e) => {
     let newFavorite = favorite.filter((val) => {
-      return val !== e;
+      return val !== e.target.id;
     });
     dispatch(upDate([]));
     dispatch(upDate(newFavorite));
@@ -45,7 +45,7 @@ const Subscribe = () => {
             <button
               className={style.button}
               id={val.ticker}
-              onClick={(event) => deleteTickers(event.target.id)}
+              onClick={(event) => deleteTickers(event)}
             >
               X
             </button>

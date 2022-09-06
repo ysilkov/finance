@@ -13,6 +13,9 @@ const Trikers = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.add.tickers);
   changeValueColor(data);
+  const addTickers = (e)=>{
+    dispatch(addFavoriteTickers(e.target.id))
+  }
   return (
     <div>
       <div className={style.tickers}>
@@ -30,8 +33,7 @@ const Trikers = () => {
               <div className={style.tickerPrice}>{val.price} $</div>
               <div className={style.tickerFooter}>
                 <div
-                  className={style.tickerPercent}
-                  style={{ background: changeColor.reverse().pop() }}
+                  className={`${style.tickerPercent} ${changeColor.reverse().pop() === "green" ? style.tickerChangeColorGreen : style.tickerChangeColorRed}`}
                 >
                   {changeValue.reverse().pop()} %
                 </div>
@@ -40,7 +42,7 @@ const Trikers = () => {
                     className={style.tickerButton}
                     id={val.ticker}
                     onClick={(event) =>
-                      dispatch(addFavoriteTickers(event.target.id))
+                      addTickers(event)
                     }
                   >
                     +

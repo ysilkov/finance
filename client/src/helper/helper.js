@@ -17,6 +17,7 @@ export const changeValueColor = (data) => {
       }
     });
   }
+  
 };
 
 export const checkTrikerColor = (ticker) => {
